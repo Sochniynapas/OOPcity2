@@ -26,19 +26,31 @@ public class Product {
         {
             if(resource.getName() == "electricity"){
                 resource.setQuantity(resource.getQuantity() + tempRandom);
-                System.out.println(buildingName + " произвело " + resource.getName() + ": " + resource.getQuantity());
+                System.out.println(buildingName + " в данный момент произвело " + resource.getName() + ": " + resource.getQuantity());
             }
             if(resource.getName() == "water"){
                 resource.setQuantity(resource.getQuantity() + tempRandom);
-                System.out.println(buildingName + " произвело " + resource.getName() + ": " + resource.getQuantity());
+                System.out.println(buildingName + " в данный момент произвело " + resource.getName() + ": " + resource.getQuantity());
+            }
+            if(resource.getName() == "money"){
+                resource.setQuantity(resource.getQuantity() + tempRandom/40);
+                System.out.println(buildingName + " в данный момент произвело " + resource.getName() + ": " + resource.getQuantity());
+                break;
             }
             if(resource.getName() == "nails"){
                 resource.setQuantity(resource.getQuantity() + tempRandom/40);
-                System.out.println(buildingName + " произвело " + resource.getName() + ": " + resource.getQuantity());
+                System.out.println(buildingName + " в данный момент произвело " + resource.getName() + ": " + resource.getQuantity());
+                break;
             }
             if(resource.getName() == "petrol"){
                 resource.setQuantity(resource.getQuantity() + tempRandom);
-                System.out.println(buildingName + " произвело " + resource.getName() + ": " + resource.getQuantity());
+                System.out.println(buildingName + " в данный момент произвело " + resource.getName() + ": " + resource.getQuantity());
+                break;
+            }
+            if(resource.getName() == "meat"){
+                resource.setQuantity(resource.getQuantity() + tempRandom);
+                System.out.println(buildingName + " в данный момент произвело " + resource.getName() + ": " + resource.getQuantity());
+                break;
             }
 
 

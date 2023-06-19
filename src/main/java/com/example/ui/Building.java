@@ -13,25 +13,15 @@ import java.util.Random;
 public class Building  {
     private String name;
     protected ObservableList<Resource> res = FXCollections.observableArrayList();
-    protected Resource electricity;
-    protected Resource water;
-    private Product product;
+
 
     public Building(String name){
 
         this.name = name;
 
-        this.electricity = new Resource("electricity", 500);
-        this.water= new Resource("water", 500);
-        res.addAll(electricity,water);
-
-        this.product = new Product(res, name);
-
-
     }
 
     public void consumeResourcesPeriodically() {
-        product.doProduction();
     }
 
 

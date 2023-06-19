@@ -103,7 +103,7 @@ public class GameController {
 
 
 
-    private String[] res = {"Food", "Wood", "Fuel", "Oil", "Money", "Timber", "Water", "Electricity"};
+
     private ObservableList<Building> buildings = FXCollections.observableArrayList();
     private HPP hpp;
     private PrintingFactory pf;
@@ -113,7 +113,7 @@ public class GameController {
     private Sawmill sawmill;
     private FurnitureStore furnitureStore;
     private Substation substation;
-    private TankFarm tf;
+    private Restaurant restaurant;
     private Slaughterhouse sh;
     private WaterUtility wt;
     private VegetablesFarm vf;
@@ -128,7 +128,7 @@ public class GameController {
         this.sawmill = new Sawmill("sawmill");
         this.furnitureStore= new FurnitureStore("furnitureStore");
         this.substation = new Substation("substation");
-        this.tf = new TankFarm("tankFarm");
+        this.restaurant = new Restaurant("restaurant");
         this.sh = new Slaughterhouse("slaughterHouse");
         this.wt = new WaterUtility("waterUtility");
         this.vf = new VegetablesFarm("vegetablesFarm");
@@ -145,7 +145,7 @@ public class GameController {
 
 
 
-        buildings.addAll(hpp, pf, gs, logging, petrolStation, sawmill, furnitureStore, substation, tf, sh, wt, vf, nf);
+        buildings.addAll(hpp, pf, gs, logging, petrolStation, sawmill, furnitureStore, substation, restaurant, sh, wt, vf, nf);
 
     }
     public void StartGame(){
@@ -153,10 +153,9 @@ public class GameController {
             @Override
             public void handle(ActionEvent event) {
                 for (Building build: buildings) {
-                    if (build.getName() == "substation") {
-                        build.consumeResourcesPeriodically();
 
-                    }
+                    build.consumeResourcesPeriodically();
+
                 }
             }
         }));

@@ -8,9 +8,11 @@ import java.util.Random;
 
 public class HPP extends Building {
     private Product product;
+    private Resource electricity = new Resource("electricity", 0);
 
     public HPP(String name) {
         super(name);
+        res.addAll(electricity);
         product = new Product(res, "hpp");
     }
     @Override

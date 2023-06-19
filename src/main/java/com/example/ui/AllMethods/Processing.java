@@ -21,10 +21,10 @@ public class Processing {
         for (Resource resource:resources)
         {
             if(resource.getName() == "water"){
-                System.out.println("На" + buildingName + "обработно и готово к транспортировке: " + resource.getQuantity() + " - " + resource.getName());
+                System.out.println("На " + buildingName + " обработно и готово к транспортировке: " + resource.getQuantity() + " - " + resource.getName());
             }
             if(resource.getName()== "electricity"){
-                System.out.println("На" + buildingName + "обработно и готово к транспортировке: " + resource.getQuantity() + " - " + resource.getName());
+                System.out.println("На " + buildingName + " обработно и готово к транспортировке: " + resource.getQuantity() + " - " + resource.getName());
             }
 
 

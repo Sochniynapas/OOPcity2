@@ -1,13 +1,15 @@
 package com.example.ui.AllBuildings;
 
 import com.example.ui.AllMethods.Association;
+import com.example.ui.AllMethods.Consumption;
 import com.example.ui.Building;
 import com.example.ui.Resource;
 
-import java.util.Random;
 
 public class FurnitureStore extends Building {
-
+    private Resource electricity = new Resource("electricity", 500);
+    private Resource water = new Resource("water", 500);
+    private Consumption consumption;
     private Association association;
     private Resource nails = new Resource("nails", 1000);
     private Resource wood = new Resource("wood", 1000);
@@ -15,13 +17,15 @@ public class FurnitureStore extends Building {
 
     public FurnitureStore(String name) {
         super(name);
-        res.addAll(nails, wood, furniture);
+        res.addAll(nails, wood, furniture, electricity, water);
         this.association = new Association(res, name);
+        this.consumption = new Consumption(res, name);
     }
     @Override
     public void consumeResourcesPeriodically(){
-        super.consumeResourcesPeriodically();
+
         association.doAssociation();
+        consumption.doConsumption();
     }
 
 }

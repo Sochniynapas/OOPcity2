@@ -26,24 +26,21 @@ public class Transformation {
         {
             if(resource.getName()=="wood"){
                 resource.setQuantity(resource.getQuantity() - tempRandom);
-                System.out.println("У" + buildingName + " использовалось " + resource.getName() + ": " + resource.getQuantity());
+                System.out.println("У " + buildingName + " использовалось " + resource.getName() + ": " + resource.getQuantity());
             }
             if(resource.getName() == "logs"){
                 resource.setQuantity(resource.getQuantity() + tempRandom);
-                System.out.println("У" + buildingName + " всего произведено " + resource.getName() + ": " + resource.getQuantity());
+                System.out.println("У " + buildingName + " всего переработано " + resource.getName() + ": " + resource.getQuantity());
             }
             if(resource.getName() == "petrol"){
                 resource.setQuantity(resource.getQuantity() - tempRandom);
-                System.out.println("У" + buildingName + " использовалось " + resource.getName() + ": " + resource.getQuantity());
+                System.out.println("У " + buildingName + " использовалось " + resource.getName() + ": " + resource.getQuantity());
             }
             if(resource.getName() == "fuel"){
                 resource.setQuantity(resource.getQuantity() + tempRandom);
-                System.out.println("У" + buildingName + " всего произведено " + resource.getName() + ": " + resource.getQuantity());
+                System.out.println("У " + buildingName + " всего переработано " + resource.getName() + ": " + resource.getQuantity());
             }
-            if(resource.getName() == "money"){
-                resource.setQuantity(resource.getQuantity() + tempRandom);
-                System.out.println("У" + buildingName + " всего произведено " + resource.getName() + ": " + resource.getQuantity());
-            }
+
 
         }
 
