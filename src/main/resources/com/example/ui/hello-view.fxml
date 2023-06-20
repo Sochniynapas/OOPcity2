@@ -4,103 +4,19 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="869.0" prefWidth="1212.0" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ui.GameController">
    <children>
-      <AnchorPane layoutX="21.0" layoutY="59.0" prefHeight="97.0" prefWidth="100.0" style="-fx-background-color: #F0E68C;">
-         <children>
-            <Label layoutX="6.0" layoutY="4.0" prefHeight="19.0" prefWidth="56.0" text="House" textAlignment="CENTER">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="132.0" layoutY="59.0" prefHeight="98.0" prefWidth="100.0" style="-fx-background-color: #F0E68C;">
-         <children>
-            <Label layoutX="6.0" layoutY="4.0" prefHeight="19.0" prefWidth="56.0" text="Mine">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="243.0" layoutY="59.0" prefHeight="98.0" prefWidth="100.0" style="-fx-background-color: #F0E68C;">
-         <children>
-            <Label layoutX="6.0" layoutY="4.0" prefHeight="20.0" prefWidth="73.0" text="Restaurant">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="356.0" layoutY="59.0" prefHeight="98.0" prefWidth="100.0" style="-fx-background-color: #F0E68C;">
-         <children>
-            <Label layoutX="8.0" layoutY="4.0" prefHeight="19.0" prefWidth="56.0" text="Mall">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="469.0" layoutY="59.0" prefHeight="98.0" prefWidth="100.0" style="-fx-background-color: #F0E68C;">
-         <children>
-            <Label layoutX="8.0" layoutY="4.0" prefHeight="19.0" prefWidth="56.0" text="Sawmill">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="21.0" layoutY="170.0" prefHeight="98.0" prefWidth="100.0" style="-fx-background-color: #F0E68C;">
-         <children>
-            <Label layoutX="6.0" layoutY="4.0" prefHeight="19.0" prefWidth="56.0" text="Factory">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="132.0" layoutY="170.0" prefHeight="98.0" prefWidth="100.0" style="-fx-background-color: #F0E68C;">
-         <children>
-            <Label layoutX="8.0" layoutY="4.0" prefHeight="19.0" prefWidth="56.0" text="Farm">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="243.0" layoutY="170.0" prefHeight="98.0" prefWidth="100.0" style="-fx-background-color: #F0E68C;">
-         <children>
-            <Label layoutX="7.0" layoutY="4.0" prefHeight="19.0" prefWidth="56.0" text="Hospital">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="356.0" layoutY="170.0" prefHeight="98.0" prefWidth="100.0" style="-fx-background-color: #F0E68C;">
-         <children>
-            <Label layoutX="8.0" layoutY="4.0" prefHeight="20.0" prefWidth="80.0" text="Power plant">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="469.0" layoutY="170.0" prefHeight="98.0" prefWidth="100.0" style="-fx-background-color: #F0E68C;">
-         <children>
-            <Label layoutX="7.0" layoutY="4.0" prefHeight="20.0" prefWidth="74.0" text="WTP">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
       <Line endX="561.3999633789062" layoutX="122.0" layoutY="290.0" startX="-100.0" strokeWidth="2.0" />
       <Label layoutX="21.0" layoutY="22.0" text="Buildings">
          <font>
@@ -112,7 +28,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="21.0" layoutY="347.0" prefHeight="134.0" prefWidth="133.0" style="-fx-background-color: #F0E68C;">
+      <AnchorPane layoutX="21.0" layoutY="347.0" prefHeight="134.0" prefWidth="133.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <Label layoutX="7.0" layoutY="6.0" text="Car">
                <font>
@@ -121,27 +37,18 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="176.0" layoutY="347.0" prefHeight="134.0" prefWidth="133.0" style="-fx-background-color: #F0E68C;">
+      <AnchorPane layoutX="176.0" layoutY="347.0" prefHeight="134.0" prefWidth="133.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <Label layoutX="7.0" layoutY="5.0" text="Lorry">
+            <Label layoutX="7.0" layoutY="5.0" text="Wires">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="332.0" layoutY="347.0" prefHeight="134.0" prefWidth="133.0" style="-fx-background-color: #F0E68C;">
+      <AnchorPane layoutX="332.0" layoutY="347.0" prefHeight="134.0" prefWidth="133.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <Label layoutX="6.0" layoutY="6.0" text="Power lines">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="485.0" layoutY="347.0" prefHeight="134.0" prefWidth="133.0" style="-fx-background-color: #F0E68C;">
-         <children>
-            <Label layoutX="6.0" layoutY="5.0" text="Water supply">
+            <Label layoutX="6.0" layoutY="6.0" text="Pipes">
                <font>
                   <Font size="16.0" />
                </font>
@@ -154,48 +61,199 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="winForName" layoutX="154.0" layoutY="521.0" prefHeight="277.0" prefWidth="296.0" style="-fx-background-color: #F0E68C;" visible="false">
+      <AnchorPane fx:id="winForName" layoutX="154.0" layoutY="521.0" prefHeight="277.0" prefWidth="296.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <Button fx:id="contFromName" layoutX="116.0" layoutY="224.0" mnemonicParsing="false" text="Continue" />
             <TextField fx:id="selectName" layoutX="74.0" layoutY="67.0" promptText="Enter Building Name" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="winWithMethods" layoutX="464.0" layoutY="521.0" prefHeight="277.0" prefWidth="307.0" style="-fx-background-color: #F0E68C;" visible="false">
+      <AnchorPane fx:id="winWithMethods" layoutX="450.0" layoutY="521.0" prefHeight="277.0" prefWidth="307.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <Accordion layoutY="101.0" />
             <Accordion layoutX="14.0" layoutY="101.0" />
             <Accordion layoutX="15.0" layoutY="78.0" />
-            <Button fx:id="createBuilding" layoutX="105.0" layoutY="201.0" mnemonicParsing="false" text="Create Building" />
+            <Button fx:id="createBuilding" layoutX="105.0" layoutY="225.0" mnemonicParsing="false" text="Create Building" />
             <VBox fx:id="listMethods" layoutY="1.0" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="cons" mnemonicParsing="false" text="Consuption" />
+                  <Button fx:id="cons" mnemonicParsing="false" text="Consumption" />
                   <Button fx:id="prod" mnemonicParsing="false" text="Product" />
-                  <Button fx:id="sell" mnemonicParsing="false" text="Sell" />
-                  <Button fx:id="stor" mnemonicParsing="false" text="Storage" />
+                  <Button fx:id="sell" mnemonicParsing="false" text="Association" />
+                  <Button fx:id="stor" mnemonicParsing="false" text="Transformation" />
                   <Button fx:id="proc" mnemonicParsing="false" text="Processing" />
                </children>
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="winOfRes" layoutX="807.0" layoutY="521.0" prefHeight="277.0" prefWidth="307.0" style="-fx-background-color: #F0E68C;">
+      <AnchorPane fx:id="winOfRes" layoutX="757.0" layoutY="521.0" prefHeight="277.0" prefWidth="307.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <Accordion layoutY="101.0" />
             <Accordion layoutX="14.0" layoutY="101.0" />
             <Accordion layoutX="15.0" layoutY="78.0" />
-            <Button fx:id="backToMet" layoutX="83.0" layoutY="120.0" mnemonicParsing="false" text="Continue with Methods" />
+            <Button fx:id="backToMet" layoutX="83.0" layoutY="225.0" mnemonicParsing="false" text="Continue with Methods" />
             <VBox fx:id="listOfRes" layoutY="1.0" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="woodRes" mnemonicParsing="false" text="wood" />
-                  <Button fx:id="logsRes" mnemonicParsing="false" text="logs" />
-                  <Button fx:id="foodRes" mnemonicParsing="false" text="food" />
-                  <Button fx:id="fuelRes" mnemonicParsing="false" text="fuel" />
-                  <Button fx:id="moneyRes" mnemonicParsing="false" text="money" />
-                  <Button fx:id="petrolRes" mnemonicParsing="false" text="petrol" />
-                  <Button fx:id="medicinesRes" mnemonicParsing="false" text="medicines" />
+                  <Button fx:id="woodRes" mnemonicParsing="false" text="Wood" />
+                  <Button fx:id="logsRes" mnemonicParsing="false" text="Timber" />
+                  <Button fx:id="foodRes" mnemonicParsing="false" text="Food" />
+                  <Button fx:id="fuelRes" mnemonicParsing="false" text="Fuel" />
+                  <Button fx:id="moneyRes" mnemonicParsing="false" text="Money" />
+                  <Button fx:id="petrolRes" mnemonicParsing="false" text="Oil" />
+                  <Button fx:id="medicinesRes" mnemonicParsing="false" text="Water" />
+                  <Button mnemonicParsing="false" text="Electricity" />
                </children>
             </VBox>
          </children>
       </AnchorPane>
       <Button fx:id="crAuthorBuilding" layoutX="20.0" layoutY="588.0" mnemonicParsing="false" text="Create New Building" />
+      <GridPane fx:id="gridWithBuildings" gridLinesVisible="true" layoutX="21.0" layoutY="52.0" prefHeight="222.0" prefWidth="489.0" style="-fx-background-color: #FFFFFF;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="fs" mnemonicParsing="false" prefHeight="74.0" prefWidth="97.0">
+               <graphic>
+                  <ImageView fitHeight="49.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../kompania.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="gs" mnemonicParsing="false" prefHeight="76.0" prefWidth="97.0" GridPane.columnIndex="1">
+               <graphic>
+                  <ImageView fitHeight="51.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../free-icon-petroleum-8044304.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="hpp" mnemonicParsing="false" prefHeight="80.0" prefWidth="102.0" GridPane.columnIndex="2">
+               <graphic>
+                  <ImageView fitHeight="51.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../3658144.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="log" mnemonicParsing="false" prefHeight="76.0" prefWidth="100.0" GridPane.columnIndex="3">
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../free-icon-tree-489969.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="nf" mnemonicParsing="false" prefHeight="82.0" prefWidth="100.0" GridPane.columnIndex="4">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../zavod_metalla.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ps" mnemonicParsing="false" prefHeight="103.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../free-icon-gas-station-1000437.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="pf" mnemonicParsing="false" prefHeight="105.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../free-icon-typography-4595104.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="rest" mnemonicParsing="false" prefHeight="114.0" prefWidth="137.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="52.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../zhiloy_dom.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="saw" mnemonicParsing="false" prefHeight="73.0" prefWidth="98.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../lesopilka.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="sh" mnemonicParsing="false" prefHeight="169.0" prefWidth="243.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../saray.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="sb" mnemonicParsing="false" prefHeight="154.0" prefWidth="189.0" GridPane.rowIndex="2">
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../zavod.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="veget" mnemonicParsing="false" prefHeight="174.0" prefWidth="173.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ferma.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ws" mnemonicParsing="false" prefHeight="124.0" prefWidth="177.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../free-icon-drops-315288.png" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="wu" mnemonicParsing="false" prefHeight="115.0" prefWidth="155.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <graphic>
+                  <ImageView fitHeight="49.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../free-icon-water-7126651.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </GridPane>
+      <AnchorPane fx:id="forBuildingsText" layoutX="786.0" prefHeight="414.0" prefWidth="426.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Text fx:id="Texter" layoutX="61.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font name="Lucida Handwriting Italic" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

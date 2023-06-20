@@ -97,11 +97,13 @@ public class GameEngine {
         this.vf = new VegetablesFarm("vegetablesFarm");
         this.nf = new NailFactory("nailFactory");
         this.wis = new WaterIntakeStation("waterIntakeStation");
+        this.wt = new WaterUtility("waterUtility");
 
 
         buildings.addAll(hpp, pf, gs, logging, petrolStation, sawmill, furnitureStore, substation, restaurant, sh, wt, vf, nf, wis);
     }
     public void StartGame(){
+
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
             @Override
             public  void handle(ActionEvent event) {

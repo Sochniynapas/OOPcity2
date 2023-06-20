@@ -18,13 +18,13 @@ public class Transportation {
                     for (Resource resource: buildingFrom.getRes()) {
                         if(resource.getName() == "petrol" || resource.getName() == "vegetables" || resource.getName() == "meat" || resource.getName() == "logs"){
                             resource.setQuantity(resource.getQuantity() - 500);
-                            System.out.println("У "+ buildingFrom.getName() + " забрано: "+resource.getName() + ": "+ 500);
+                            System.out.println("У "+ buildingFrom.getName() + " в car забрано: "+resource.getName() + ": "+ 500);
                             for (Building buildingTo : GameEngine.getBuildings()) {
                                 if (buildingTo.getName() != buildingFrom.getName()) {
                                     for (Resource resource1 : buildingTo.getRes()) {
                                         if (resource.getName() == resource1.getName()) {
                                             resource1.setQuantity(resource1.getQuantity() + 500);
-                                            System.out.println("Для "+ buildingTo.getName() + " передано: "+resource1.getName() + ": "+ 500);
+                                            System.out.println("Для "+ buildingTo.getName() + " через car передано: "+resource1.getName() + ": "+ 500);
                                         }
                                     }
                                 }
@@ -36,7 +36,7 @@ public class Transportation {
                     for (Resource resource: buildingFrom.getRes()) {
                         if(resource.getName() == "wood"){
                             resource.setQuantity(resource.getQuantity() - 300);
-                            System.out.println("У "+ buildingFrom.getName() + " забрано: "+resource.getName() + ": "+ 300);
+                            System.out.println("У "+ buildingFrom.getName() + " в car забрано: "+resource.getName() + ": "+ 300);
                             for (Building buildingTo : GameEngine.getBuildings()) {
                                 if (buildingTo.getName() != buildingFrom.getName()) {
                                     for (Resource resource1 : buildingTo.getRes()) {
@@ -49,7 +49,7 @@ public class Transportation {
                                             }
                                             if(temp == 0) {
                                                 resource1.setQuantity(resource1.getQuantity() + 300);
-                                                System.out.println("Для " + buildingTo.getName() + " передано: " + resource1.getName() + ": " + 300);
+                                                System.out.println("Для " + buildingTo.getName() + " через car передано: " + resource1.getName() + ": " + 300);
                                             }
                                         }
                                     }
@@ -60,19 +60,33 @@ public class Transportation {
                 }
                 else if (method.getName() == "productElectAndWater") {
                     for (Resource resource : buildingFrom.getRes()) {
-                        if(resource.getName() == "electricity" || resource.getName() == "water"){
+                        if(resource.getName() == "electricity"){
                             resource.setQuantity(resource.getQuantity() - 200);
-                            System.out.println("У "+ buildingFrom.getName() + " забрано: "+resource.getName() + ": "+ 200);
+                            System.out.println("У "+ buildingFrom.getName() + " при помощи wires забрано: "+resource.getName() + ": "+ 200);
                             for (Building buildingTo : GameEngine.getBuildings()) {
                                 if (buildingTo.getName() != buildingFrom.getName()) {
                                     for (Resource resource1 : buildingTo.getRes()) {
                                         if (resource.getName() == resource1.getName()) {
                                             resource1.setQuantity(resource1.getQuantity() + 200);
-                                            System.out.println("Для "+ buildingTo.getName() + " передано: "+resource1.getName() + ": "+ 200);
+                                            System.out.println("Для "+ buildingTo.getName() + " через wires передано: "+resource1.getName() + ": "+ 200);
                                         }
                                     }
                                 }
                             }
+                        } else if (resource.getName() == "water") {
+                            resource.setQuantity(resource.getQuantity() - 200);
+                            System.out.println("У "+ buildingFrom.getName() + " при помощи pipes забрано: "+resource.getName() + ": "+ 200);
+                            for (Building buildingTo : GameEngine.getBuildings()) {
+                                if (buildingTo.getName() != buildingFrom.getName()) {
+                                    for (Resource resource1 : buildingTo.getRes()) {
+                                        if (resource.getName() == resource1.getName()) {
+                                            resource1.setQuantity(resource1.getQuantity() + 200);
+                                            System.out.println("Для "+ buildingTo.getName() + " через pipes передано: "+resource1.getName() + ": "+ 200);
+                                        }
+                                    }
+                                }
+                            }
+
                         }
                     }
                 }

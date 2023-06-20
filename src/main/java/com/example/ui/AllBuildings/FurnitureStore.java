@@ -2,6 +2,7 @@ package com.example.ui.AllBuildings;
 
 import com.example.ui.AllMethods.Association;
 import com.example.ui.AllMethods.Consumption;
+import com.example.ui.AllMethods.Product;
 import com.example.ui.Building;
 import com.example.ui.Resource;
 

@@ -1,29 +1,28 @@
 package com.example.ui;
 
-import com.example.ui.AllBuildings.*;
-
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
-import javafx.util.Duration;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import java.util.ArrayList;
-
-
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 public class GameController {
-    @FXML
-    private Button backToMet;
 
     @FXML
-    private Button coalRes;
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private Text Texter;
+
+    @FXML
+    private Button backToMet;
 
     @FXML
     private Button cons;
@@ -38,19 +37,25 @@ public class GameController {
     private Button createBuilding;
 
     @FXML
-    private Button dishRes;
-
-    @FXML
-    private Button electricityRes;
-
-    @FXML
     private Button foodRes;
 
     @FXML
-    private Button furnitureRes;
+    private AnchorPane forBuildingsText;
 
     @FXML
-    private Button grainRes;
+    private Button fuelRes;
+
+    @FXML
+    private Button fs;
+
+    @FXML
+    private GridPane gridWithBuildings;
+
+    @FXML
+    private Button gs;
+
+    @FXML
+    private Button hpp;
 
     @FXML
     private VBox listMethods;
@@ -59,7 +64,25 @@ public class GameController {
     private VBox listOfRes;
 
     @FXML
+    private Button log;
+
+    @FXML
+    private Button logsRes;
+
+    @FXML
     private Button medicinesRes;
+
+    @FXML
+    private Button moneyRes;
+
+    @FXML
+    private Button nf;
+
+    @FXML
+    private Button petrolRes;
+
+    @FXML
+    private Button pf;
 
     @FXML
     private Button proc;
@@ -68,22 +91,31 @@ public class GameController {
     private Button prod;
 
     @FXML
+    private Button ps;
+
+    @FXML
+    private Button rest;
+
+    @FXML
+    private Button saw;
+
+    @FXML
+    private Button sb;
+
+    @FXML
     private TextField selectName;
 
     @FXML
     private Button sell;
 
     @FXML
+    private Button sh;
+
+    @FXML
     private Button stor;
 
     @FXML
-    private Button treeRes;
-
-    @FXML
-    private Button wasteRes;
-
-    @FXML
-    private Button waterRes;
+    private Button veget;
 
     @FXML
     private AnchorPane winForName;
@@ -97,79 +129,254 @@ public class GameController {
     @FXML
     private Button woodRes;
 
+    @FXML
+    private Button ws;
 
-
-
-
-
-
-
-
-
-    public GameController() {
-
-
-
-        crAuthorBuilding = new Button();
-        contFromName = new Button();
-        cons = new Button();
-        prod = new Button();
-        sell = new Button();
-        stor = new Button();
-        proc = new Button();
-
-
-    }
-
-
-    public void buildNewBuilding(){
-
-        ArrayList<String> resources = new ArrayList<>();
-        ArrayList<String> methods = new ArrayList<>();
-        String name;
-
-
-        System.out.println("hello");
-
-
-
-    }
-
+    @FXML
+    private Button wu;
 
     @FXML
     void initialize() {
+        fs.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getFurnitureStore()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
 
-        crAuthorBuilding.setOnAction((event)->{
-            winForName.setVisible(true);
-            crAuthorBuilding.setVisible(false);
+            Texter.setText(text);
         });
-        contFromName.setOnAction((event)->{
-            winForName.setVisible(false);
-            winWithMethods.setVisible(true);
-        });
-        cons.setOnAction((event)->{
-            winWithMethods.setVisible(false);
+        gs.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getGs()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
 
+            Texter.setText(text);
         });
-        prod.setOnAction((event)->{
-            winWithMethods.setVisible(false);
+        hpp.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getHpp()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
 
+            Texter.setText(text);
         });
-        sell.setOnAction((event)->{
-            winWithMethods.setVisible(false);
+        log.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getLogging()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
 
+            Texter.setText(text);
         });
-        stor.setOnAction((event)->{
-            winWithMethods.setVisible(false);
+        nf.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getNf()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
 
+            Texter.setText(text);
         });
-        proc.setOnAction((event)->{
-            winWithMethods.setVisible(false);
+        ps.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getPetrolStation()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
 
+            Texter.setText(text);
+        });
+        pf.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getPf()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
+
+            Texter.setText(text);
+        });
+        rest.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getRestaurant()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
+
+            Texter.setText(text);
+        });
+        saw.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getSawmill()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
+
+            Texter.setText(text);
+        });
+        sh.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getSh()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
+
+            Texter.setText(text);
+        });
+        sb.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getSubstation()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
+
+            Texter.setText(text);
+        });
+        veget.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getVf()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
+
+            Texter.setText(text);
+        });
+        ws.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getWis()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
+
+            Texter.setText(text);
+        });
+        wu.setOnAction(event -> {
+            String text = "";
+            for (Building building: GameEngine.getBuildings()) {
+                if(building == GameEngine.getWt()) {
+                    text+="Здание: " + building.getName() + "\n";
+                    for (Resource res : building.getRes()) {
+                        text+="всего " + res.getName() + ": " + res.getQuantity() + "\n";
+                    }
+                    for (Methods methods: building.getMethods()){
+                        text+="Метод: " + methods.getName() + "\n";
+                    }
+                }
+            }
+
+            Texter.setText(text);
         });
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

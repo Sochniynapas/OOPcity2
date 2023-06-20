@@ -11,7 +11,7 @@ import java.io.IOException;
 
 
 public class HelloApplication extends Application {
-    private GameController gameController;
+
 
     @Override
 
@@ -24,7 +24,11 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
         GameEngine gameEngine = new GameEngine();
+        GameController gameController = new GameController();
         gameEngine.StartGame();
+
+
+
 
     }
 
