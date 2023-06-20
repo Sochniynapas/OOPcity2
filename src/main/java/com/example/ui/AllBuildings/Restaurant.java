@@ -6,8 +6,8 @@ import com.example.ui.Building;
 import com.example.ui.Resource;
 
 public class Restaurant extends Building {
-    private Resource electricity = new Resource("electricity", 500);
-    private Resource water = new Resource("water", 500);
+    private Resource electricity = new Resource("electricity", 0);
+    private Resource water = new Resource("water", 0);
     private Resource meat = new Resource("meat", 0);
     private Resource vegetables = new Resource("vegetables", 0);
     private Resource dishes = new Resource("dishes", 0);
@@ -15,9 +15,8 @@ public class Restaurant extends Building {
     private Association association;
     public Restaurant(String name) {
         super(name);
-        res.addAll(electricity,water,meat,vegetables,dishes);
-        consumption = new Consumption(res,name);
-        association = new Association(res, name);
+        getRes().addAll(electricity,water,meat,vegetables,dishes);
+        getMethods().addAll(consumption = new Consumption("consumption", getRes(),name), association = new Association("association", getRes(), name));
     }
     @Override
     public void consumeResourcesPeriodically(){

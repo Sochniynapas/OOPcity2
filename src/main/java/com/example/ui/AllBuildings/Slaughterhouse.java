@@ -6,16 +6,15 @@ import com.example.ui.Building;
 import com.example.ui.Resource;
 
 public class Slaughterhouse extends Building {
-    private Resource electricity = new Resource("electricity", 500);
-    private Resource water = new Resource("water", 500);
+    private Resource electricity = new Resource("electricity", 0);
+    private Resource water = new Resource("water", 0);
     private Consumption consumption;
     private Resource meat = new Resource("meat", 0);
     private Product product;
     public Slaughterhouse(String name) {
         super(name);
-        res.addAll(meat, electricity, water);
-        consumption = new Consumption(res, name);
-        product = new Product(res, name);
+        getRes().addAll(meat, electricity, water);
+        getMethods().addAll(consumption = new Consumption("consumption", getRes(), name), product = new Product("product", getRes(), name));
     }
     @Override
     public void consumeResourcesPeriodically(){

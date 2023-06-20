@@ -23,8 +23,8 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
-        this.gameController = new GameController();
-        gameController.StartGame();
+        GameEngine gameEngine = new GameEngine();
+        gameEngine.StartGame();
 
     }
 

@@ -1,18 +1,11 @@
 package com.example.ui;
-import com.example.ui.AllMethods.Product;
-import javafx.animation.Timeline;
-import javafx.animation.KeyFrame;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.util.Duration;
-import java.util.List;
-import java.util.Random;
 
-public class Building  {
+public abstract class Building  {
     private String name;
-    protected ObservableList<Resource> res = FXCollections.observableArrayList();
+    private ObservableList<Resource> res = FXCollections.observableArrayList();
+    private ObservableList<Methods> methods = FXCollections.observableArrayList();
 
 
     public Building(String name){
@@ -24,12 +17,16 @@ public class Building  {
     public void consumeResourcesPeriodically() {
     }
 
-
-
+    public ObservableList<Methods> getMethods() {
+        return methods;
+    }
 
     public String getName(){
         return name;
     }
 
+    public ObservableList<Resource> getRes() {
+        return res;
 
+    }
 }

@@ -8,18 +8,17 @@ import com.example.ui.Resource;
 import java.util.Random;
 
 public class Logging extends Building {
-    private Resource electricity = new Resource("electricity", 500);
-    private Resource water = new Resource("water", 500);
+    private Resource electricity = new Resource("electricity", 0);
+    private Resource water = new Resource("water", 0);
     private Consumption consumption;
-    private Resource logs = new Resource("logs", 1000);
+    private Resource logs = new Resource("logs", 0);
     private Product product;
 
     public Logging(String name) {
         super(name);
-        res.addAll(logs,electricity,water);
+        getRes().addAll(logs,electricity,water);
+        getMethods().addAll(consumption = new Consumption("consumption", getRes(), name), product = new Product("product", getRes(),name));
 
-        consumption = new Consumption(res, name);
-        product = new Product(res,name);
 
     }
     @Override

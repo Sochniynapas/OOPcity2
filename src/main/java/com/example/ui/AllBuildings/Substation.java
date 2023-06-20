@@ -9,13 +9,13 @@ public class Substation extends Building {
 
 
 
-    private Resource electricity = new Resource("electricity", 500);
+    private Resource electricity = new Resource("electricity", 0);
     private Processing processing;
 
     public Substation(String name) {
         super(name);
-        res.addAll(electricity);
-        processing = new Processing(res,name);
+        getRes().addAll(electricity);
+        getMethods().addAll(processing = new Processing("processing", getRes(),name));
 
 
     }

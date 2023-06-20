@@ -1,18 +1,20 @@
 package com.example.ui.AllMethods;
 
+import com.example.ui.Methods;
 import com.example.ui.Resource;
 import javafx.collections.ObservableList;
 
 import java.util.Random;
 
-public class Association {
+public class Association extends Methods {
 
-    private String methodName = "product";
+    private String methodName;
     private ObservableList<Resource> resources;
     private String buildingName;
 
-    public Association(ObservableList<Resource> resources, String buildingName) {
-
+    public Association(String name,ObservableList<Resource> resources, String buildingName) {
+        super(name);
+        this.methodName=name;
         this.buildingName = buildingName;
         this.resources = resources;
 
@@ -25,37 +27,37 @@ public class Association {
         for (Resource resource:resources)
         {
 
+            switch (resource.getName()) {
+                case ("nails") :
+                    resource.setQuantity(resource.getQuantity() - tempRandom);
+                    System.out.println(buildingName + " Потратил " + resource.getName() + ": " + tempRandom);
+                    break;
 
-            if(resource.getName() == "nails"){
-                resource.setQuantity(resource.getQuantity() - tempRandom);
-                System.out.println(buildingName + " Потратил " + resource.getName() + ": " + resource.getQuantity());
-            }
-            if(resource.getName() == "wood"){
-                resource.setQuantity(resource.getQuantity() - tempRandom);
-                System.out.println(buildingName + " Потратил " + resource.getName() + ": " + resource.getQuantity());
-            }
-            if(resource.getName() == "furniture"){
-                resource.setQuantity(resource.getQuantity() + tempRandom - 29);
-                System.out.println(buildingName + " Создал " + resource.getName() + ": " + resource.getQuantity());
-            }
-            if(resource.getName() == "vegetables"){
-                resource.setQuantity(resource.getQuantity() - tempRandom);
-                System.out.println(buildingName + " Потратил " + resource.getName() + ": " + resource.getQuantity());
-            }
-            if(resource.getName() == "meat"){
-                resource.setQuantity(resource.getQuantity() - tempRandom);
-                System.out.println(buildingName + " Потратил " + resource.getName() + ": " + resource.getQuantity());
-            }
-            if(resource.getName() == "dishes"){
-                resource.setQuantity(resource.getQuantity() + tempRandom-10);
-                System.out.println(buildingName + " Произвёл " + resource.getName() + ": " + resource.getQuantity());
+                case ("wood") :
+                    resource.setQuantity(resource.getQuantity() - tempRandom);
+                    System.out.println(buildingName + " Потратил " + resource.getName() + ": " + tempRandom);
+                    break;
+                case ("furniture") :
+                    resource.setQuantity(resource.getQuantity() + tempRandom - 29);
+                    System.out.println(buildingName + " Создал " + resource.getName() + ": " + tempRandom);
+                    break;
+                case ("vegetables") :
+                    resource.setQuantity(resource.getQuantity() - tempRandom);
+                    System.out.println(buildingName + " Потратил " + resource.getName() + ": " + tempRandom);
+                    break;
+                case ("meat") :
+                    resource.setQuantity(resource.getQuantity() - tempRandom);
+                    System.out.println(buildingName + " Потратил " + resource.getName() + ": " + tempRandom);
+                    break;
+                case ("dishes") :
+                    resource.setQuantity(resource.getQuantity() + tempRandom - 10);
+                    System.out.println(buildingName + " Произвёл " + resource.getName() + ": " + tempRandom);
+                    break;
             }
 
         }
 
     }
 
-    public String getMethodName() {
-        return methodName;
-    }
+
 }

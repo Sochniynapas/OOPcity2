@@ -8,20 +8,19 @@ import com.example.ui.Resource;
 import java.util.Random;
 
 public class Sawmill extends Building {
-    private Resource electricity = new Resource("electricity", 500);
-    private Resource water = new Resource("water", 500);
+    private Resource electricity = new Resource("electricity", 0);
+    private Resource water = new Resource("water", 0);
     private Consumption consumption;
     private Resource wood = new Resource("wood", 0);
-    private Resource logs = new Resource("logs", 500);
+    private Resource logs = new Resource("logs", 0);
     private Transformation transformation;
 
 
 
     public Sawmill(String name) {
         super(name);
-        res.addAll(wood, logs, electricity, water);
-        consumption = new Consumption(res, name);
-        transformation = new Transformation(res, name);
+        getRes().addAll(wood, logs, electricity, water);
+        getMethods().addAll(consumption = new Consumption("consumption", getRes(), name), transformation = new Transformation("transformation", getRes(), name));
 
     }
     @Override

@@ -36,5 +36,4 @@ public class Resource {
     //private String[] resources = {"Food", "Wood", "Fuel", "Oil", "Money", "Timber", "Water", "Electricity"};
 
 
-
 }

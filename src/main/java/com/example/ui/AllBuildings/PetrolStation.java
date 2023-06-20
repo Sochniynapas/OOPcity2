@@ -8,16 +8,15 @@ import com.example.ui.Resource;
 import java.util.Random;
 
 public class PetrolStation extends Building {
-    private Resource electricity = new Resource("electricity", 500);
-    private Resource water = new Resource("water", 500);
+    private Resource electricity = new Resource("electricity", 0);
+    private Resource water = new Resource("water", 0);
     private Consumption consumption;
     private Resource petrol = new Resource("petrol", 0);
     private Product product;
     public PetrolStation(String name) {
         super(name);
-        res.addAll(petrol,electricity,water);
-        consumption = new Consumption(res, name);
-        product = new Product(res, name);
+        getRes().addAll(petrol,electricity,water);
+        getMethods().addAll(consumption = new Consumption("consumption", getRes(), name), product = new Product("product", getRes(), name));
     }
     @Override
     public void consumeResourcesPeriodically(){

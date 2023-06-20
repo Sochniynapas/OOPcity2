@@ -10,8 +10,8 @@ public class WaterUtility extends Building {
     private Processing processing;
     public WaterUtility(String name) {
         super(name);
-        res.addAll(water);
-        processing = new Processing(res, name);
+        getRes().addAll(water);
+        getMethods().addAll(processing = new Processing("processing", getRes(), name));
     }
     @Override
     public void consumeResourcesPeriodically(){

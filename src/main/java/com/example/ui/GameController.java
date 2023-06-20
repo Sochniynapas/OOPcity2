@@ -104,35 +104,10 @@ public class GameController {
 
 
 
-    private ObservableList<Building> buildings = FXCollections.observableArrayList();
-    private HPP hpp;
-    private PrintingFactory pf;
-    private GasStation gs;
-    private Logging logging;
-    private PetrolStation petrolStation;
-    private Sawmill sawmill;
-    private FurnitureStore furnitureStore;
-    private Substation substation;
-    private Restaurant restaurant;
-    private Slaughterhouse sh;
-    private WaterUtility wt;
-    private VegetablesFarm vf;
-    private NailFactory nf;
+
 
     public GameController() {
-        this.hpp = new HPP("hpp");
-        this.pf = new PrintingFactory("printingFactory");
-        this.gs = new GasStation("gasStation");
-        this.logging = new Logging("logging");
-        this.petrolStation = new PetrolStation("petrolStation");
-        this.sawmill = new Sawmill("sawmill");
-        this.furnitureStore= new FurnitureStore("furnitureStore");
-        this.substation = new Substation("substation");
-        this.restaurant = new Restaurant("restaurant");
-        this.sh = new Slaughterhouse("slaughterHouse");
-        this.wt = new WaterUtility("waterUtility");
-        this.vf = new VegetablesFarm("vegetablesFarm");
-        this.nf = new NailFactory("nailFactory");
+
 
 
         crAuthorBuilding = new Button();
@@ -144,25 +119,8 @@ public class GameController {
         proc = new Button();
 
 
-
-        buildings.addAll(hpp, pf, gs, logging, petrolStation, sawmill, furnitureStore, substation, restaurant, sh, wt, vf, nf);
-
     }
-    public void StartGame(){
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                for (Building build: buildings) {
 
-                    build.consumeResourcesPeriodically();
-
-                }
-            }
-        }));
-        timeline.setCycleCount(Timeline.INDEFINITE);
-
-        timeline.play();
-    }
 
     public void buildNewBuilding(){
 
@@ -176,6 +134,7 @@ public class GameController {
 
 
     }
+
 
     @FXML
     void initialize() {

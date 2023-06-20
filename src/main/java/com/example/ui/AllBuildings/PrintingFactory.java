@@ -7,16 +7,15 @@ import com.example.ui.Resource;
 
 
 public class PrintingFactory extends Building {
-    private Resource electricity = new Resource("electricity", 500);
-    private Resource water = new Resource("water", 500);
+    private Resource electricity = new Resource("electricity", 0);
+    private Resource water = new Resource("water", 0);
     private Consumption consumption;
     private Resource money = new Resource("money", 0);
     private Product product;
     public PrintingFactory(String name){
         super(name);
-        res.addAll(money, electricity, water);
-        consumption = new Consumption(res, name);
-        product = new Product(res, name);
+        getRes().addAll(money, electricity, water);
+        getMethods().addAll(consumption = new Consumption("consumption", getRes(), name), product = new Product("product", getRes(), name));
 
     }
     @Override
